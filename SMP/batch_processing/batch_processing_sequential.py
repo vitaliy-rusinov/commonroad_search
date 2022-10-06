@@ -1,7 +1,7 @@
 import warnings
 
 import SMP.batch_processing.helper_functions as hf
-from SMP.batch_processing.process_scenario import debug_scenario
+from SMP.batch_processing.process_scenario import debug_scenario, postprocess_result
 
 
 def run_sequential_processing():
@@ -11,8 +11,10 @@ def run_sequential_processing():
         "Sequential Batch Processor", for_multi_processing=False)
 
     for idx, scenario_id in enumerate(scenario_loader.scenario_ids):
-        debug_scenario(scenario_id=scenario_id, scenario_loader=scenario_loader, configuration_dict=configuration,
-                       def_automaton=def_automaton, result_dict=result_dict, logger=logger)
+        ret_result = debug_scenario(scenario_id=scenario_id, scenario_loader=scenario_loader,
+                                    configuration_dict=configuration,
+                                    def_automaton=def_automaton, logger=logger)
+        postprocess_result(ret_result, result_dict, scenario_id, scenario_loader, configuration)
         result_dict["started_processing"] += 1
         hf.print_current_status(result_dict)
 

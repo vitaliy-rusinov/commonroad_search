@@ -1,8 +1,6 @@
 commonroad-io==2022.1
 tqdm~=4.64.1
 networkx>=2.4
-jupyter
-notebook
 matplotlib~=3.3.4
 numpy~=1.23.3
 pyyaml~=5.3.1

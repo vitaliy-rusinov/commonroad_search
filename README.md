@@ -102,8 +102,8 @@ $ pip install commonroad_drivability_checker-2022.1.1-cp38-cp38-win_amd64.whl
 $ pip install Polygon3-3.0.9.1-cp38-cp38-macosx_10_9_x86_64.whl
 $ pip install commonroad_drivability_checker-2022.1.1-cp38-cp38-macosx_10_13_x86_64.whl
 
-# Linux
-pip install commonroad-drivability-checker
+# Ubuntu
+$ pip install commonroad-drivability-checker
 ```
 
 #### Manual Installation

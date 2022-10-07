@@ -33,7 +33,7 @@ You can either run the code locally, in a virtual machine, or in a docker contai
 
 **skip this section if you intend to run the code in the virtual machine or in the docker container.**
 
-We recommend using [Anaconda](https://www.anaconda.com/) to manage your environment so that even if you mess something up, you can always have a safe and clean restart. A guide for managing python environments with Anaconda can be found [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+We recommend using [Anaconda](https://www.anaconda.com/) to manage your environment so that even if you mess something up, you can always have a safe and clean restart. A guide for managing python environments with Anaconda can be found [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html). If your computer has an Apple M1 cpu, please use the 64-bit Anaconda installer and not the 64-bit (M1) installer.
 
 After installing Anaconda, create a new environment with:
 ``` sh

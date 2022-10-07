@@ -8,7 +8,7 @@ This is a programming exercise of the lecture **Techniques in Artificial Intelli
 - Greedy Best First Search
 - A* Search
 
-The code is written in Python 3.7 and has been tested on Ubuntu 18.04. As the first step, clone this repository with:
+The code is written in Python 3.8 and has been tested on Ubuntu 20.04. As the first step, clone this repository with:
 
 ```sh
 $ git clone https://gitlab.lrz.de/tum-cps/commonroad-search.git
@@ -47,10 +47,17 @@ $ source activate commonroad-py38
 ```
 Install `Jupyter Notebook` and supplementary modules:
 ```sh
-$ conda install jupyter ipykernel ipywidgets sphinx scipy -y
+$ conda install jupyter notebook ipykernel ipywidgets sphinx scipy -y
 $ jupyter nbextension install --py widgetsnbextension --user
 $ jupyter nbextension enable widgetsnbextension --user --py
 ```
+
+Update pip:
+
+```sh
+python -m pip install --upgrade pip
+```
+
 Then, install the dependencies with:
 
 ```sh
@@ -81,36 +88,38 @@ $ pip install .
 
 ### CommonRoad Drivability Checker
 
-The [CommonRoad Drivability Checker](https://commonroad.in.tum.de/drivability-checker) provides functionalities such as collision checks, kinematic feasibility checks, road boundary checks, etc. After cloning the package, you can choose to install it either with script installation or manual installation:
+The [CommonRoad Drivability Checker](https://commonroad.in.tum.de/drivability-checker) provides functionalities such as collision checks, kinematic feasibility checks, road boundary checks, etc. You can choose either installing it from the provided wheel files or using manual installation:
+
+#### Wheel Installation
 
 ```sh
-$ git clone https://gitlab.lrz.de/tum-cps/commonroad-drivability-checker.git
-$ cd commonroad-drivability-checker
-```
+cd wheels
+# Windows
+$ pip install Polygon3-3.0.9.1-cp38-cp38-win_amd64.whl
+$ pip install commonroad_drivability_checker-2022.1.1-cp38-cp38-win_amd64.whl
 
-#### Script Installation
+# macOS 10.13+
+$ pip install Polygon3-3.0.9.1-cp38-cp38-macosx_10_9_x86_64.whl
+$ pip install commonroad_drivability_checker-2022.1.1-cp38-cp38-macosx_10_13_x86_64.whl
 
-```sh
-# Ubuntu
-$ bash build.sh -w -i
-
-# MacOS
-$ brew install cmake eigen boost libomp
-$ ./build.sh -w -i
+# Linux
+pip install commonroad-drivability-checker
 ```
 
 #### Manual Installation
 
 ```sh
+$ git clone https://gitlab.lrz.de/tum-cps/commonroad-drivability-checker.git
+$ cd commonroad-drivability-checker
+
 # Ubuntu
 $ sudo apt-get install libboost-dev libboost-thread-dev libboost-test-dev libboost-filesystem-dev libeigen3-dev
 $ git submodule update --init
-$ pip install -v . --use-feature=in-tree-build
-
+$ pip install -v . 
 # MacOS
 $ brew install cmake eigen boost libomp
 $ git submodule update --init
-$ pip install -v . --use-feature=in-tree-build
+$ pip install -v . 
 ```
 
 
